@@ -1,3 +1,36 @@
+*{
+    padding: 2px;
+    margin: 2px;
+    box-sizing: border-box;
+}
+
 body{
     font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 2;
+}
+
+.btn{
+    font-family: inherit;
+    cursor: pointer;
+    outline: 0;
+    font-size: 15px;
+}
+.text {
+    opacity: 0.8;
+}
+.title{
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+.container{
+    max-width: 1280px;
+    margin: auto;
+    padding: 10px;
+    background: lavender;
+    text-align: center;
+}
+.doctor-search {
+    margin: 10px;
 }
