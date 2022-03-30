@@ -9,25 +9,23 @@
     <body>
 
         <div class ="main-container">
-            <div class ="meal-wrapper">
-                <div class = "doctor-search">
+            <div class ="dr-wrapper">
+                <div class = "doctor-search-box">
                     <h2 class = "title">Find Doctor's For Your Healthcare Journey</h2>
-                    <h4 id="quote">This space is for you and your unique journey</h4>
+                    <h4 id="intro">This space is for you and your unique journey</h4>
 
                     <div class = "dr-search-box">
-                        <input type = "text" class = "search-content" placeholder="What do you need?" id = "search-input">
+                        <input type = "text" class = "search-control" placeholder="What do you need?" id = "search-input">
                         <button type = "submit" class = "search-btn btn" id="search-btn">
                             <i class = "fas fa-search"></i>
+                            <div id="magnifying-glass"></div>
                         </button>
                     </div>
                 
-            
-
-
                 </div>
                 <div class ="doctor-result">
                  <h2 class ="title">Your Search Results:</h2>
-                 <div class = "doctor">
+                 <div id = "doctor">
                      <!---doctor item-->
                      <div class ="doctor-item">
                          <div class = "dr-img">
@@ -39,8 +37,56 @@
                          </div>
                      </div>
                      <!--- end of the doctor item-->
+                     <!---doctor item-->
+                     <div class ="doctor-item">
+                        <div class = "dr-img">
+                            <img src = "doctor.jpg" alt = "doctor">
+                        </div>
+                        <div class ="doctor-name">
+                            <h3 em>Doctor's Name</h3>
+                            <a href = "#" class = "dr-btn">Get additional info</a>
+                        </div>
+                    </div>
+                    <!--- end of the doctor item-->
+                    <!---doctor item-->
+                    <div class ="doctor-item">
+                        <div class = "dr-img">
+                            <img src = "doctor.jpg" alt = "doctor">
+                        </div>
+                        <div class ="doctor-name">
+                            <h3 em>Doctor's Name</h3>
+                            <a href = "#" class = "dr-btn">Get additional info</a>
+                        </div>
+                    </div>
+                    <!--- end of the doctor item-->
                  </div>   
                 </div>
+                <div class = "doctor-details">
+                    <!---doctor info close btn -->
+                    <button type = "button" class="btn drInfo-close-btn" id ="drInfo-close-btn">CLOSE
+                        <i class = "fas fa-times"></i>
+                    </button>
+                    <!--- Dr info content-->
+                    <div class = "doctor-details-content">
+                        <div class = "doctor-profile-img">
+                            <img src = "doctor.jpg" alt ="">
+                        </div>
+                        <h2 class= "doctor-name"> Doctor's Name Here</h2>
+                        <p class ="doctor-specialty">Specialty</p>
+                        <div class ="doctor-info">
+                            <h3>About Me</h3>
+                            <h5>Accepting New Patients</h5>
+                            <li>Board Certification:</li>
+                            <li>Name of Practice:</li>
+                            <p>Molly Nathanson MSN,	CNM is originally from Massachusetts where	she	attended Brandeis University for her undergraduate degrees	in	Health:	Science Society, and Policy, as	well as	Sculpture. In her junior year	at	Brandeis, she spent a semester abroad in Kenya studying	the	midwives of	the	Maasai	tribe solidifying her decision to become a midwife</p>
+                        </div>
+                        <div class = "doctor-webpage-link">
+                            <a href = "#" target = "_blank">Make An Appointment</a>
+                        </div>
+                
+                    </div>
+                </div>
+
             </div>
         </div>
 
