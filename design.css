@@ -14,14 +14,85 @@ body{
 .btn{
     font-family: inherit;
     cursor: pointer;
-    outline: 0;
+    outline: 2;
     font-size: 15px;
 }
+/*physician detials*/
+
+.doctor-details{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:black;
+    background: lightblue;
+    border-radius: 10px;
+    width: 90%;
+    height:90%;
+    display:;
+    padding: 10px;
+}
+/* figure out how to do the scrollbar w/o the webkit 
+.doctor-details::-webkit-scrollbar{
+    width: 5px;
+}
+*/
+
+/* for the script */
+.showDoctor{
+    display: block;
+}
+.doctor-details-content{
+    margin: 20px;
+}
+
+.drInfo-close-btn{
+    position: absolute;
+    right:10px;
+    text-align: center;
+    justify-content: center;
+}
+.doctor-name{
+    letter-spacing: 1px;
+    padding-bottom: 5px;
+}
+
+.doctor-img{
+    width:100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+
+#magnifying-glass {
+    font-size: 15px;
+    display: inline-block;
+    width:3px;
+    box-sizing: content-box;
+    height:3px;
+    border: 0.1em solid red;
+    position: relative;
+    border-radius: 0.35em;
+  }
+  #magnifying-glass:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    right: -0.25em;
+    bottom: -0.1em;
+    border-width: 0;
+    background: red;
+    width: 0.35em;
+    height: 0.08em;
+    transform: rotate(45deg);
+  }
+
 .text {
-    opacity: 0.8;
+    opacity: ;
 }
+
 .title{
-    font-size: 15px;
+    font-size: 20px;
     margin-bottom: 2px;
 }
 .container{
@@ -31,6 +102,65 @@ body{
     background: lavender;
     text-align: center;
 }
-.doctor-search {
+.doctor-item{
+    
+}
+.doctor-result{
+    border: 5px solid green;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.dr-wrapper{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+}
+img{
+    max-width: 400px;
+    height: 200px;
+    display: inline-block;
+    object-fit: cover;
+    border: 5px solid black;
+}
+
+.dr-search-box{
+    display: flex;
+    align-items: stretch;
     margin: 10px;
+}
+#search-btn{
+    width: 200px:
+    height: 20px;
+    margin:0px;
+}
+.search-btn{
+    background-color: brown;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 60px;
+}
+
+.search-control{
+    padding: 0px;
+    margin:0px;
+    width: 90%;
+    height: 50px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 2px solid brown;
+}
+.doctor-item{
+    border: 5px solid blue;
+    height: auto;
+    width: 300px;
+    box-shadow: 7px 7px gray;
+}
+.dr-btn{
+    border: 5px solid brown;
+    color: brown;
+    border-radius: 10px;
+    display: inline-block;
+    width: 150px;
 }
