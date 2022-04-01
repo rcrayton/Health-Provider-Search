@@ -29,7 +29,7 @@ body{
     border-radius: 10px;
     width: 90%;
     height:90%;
-    display:;
+    display:none;
     padding: 10px;
 }
 /* figure out how to do the scrollbar w/o the webkit 
@@ -87,9 +87,6 @@ body{
     transform: rotate(45deg);
   }
 
-.text {
-    opacity: ;
-}
 
 .title{
     font-size: 20px;
@@ -103,7 +100,7 @@ body{
     text-align: center;
 }
 .doctor-item{
-    
+    background: lightblue;
 }
 .doctor-result{
     border: 5px solid green;
@@ -131,8 +128,6 @@ img{
     margin: 10px;
 }
 #search-btn{
-    width: 200px:
-    height: 20px;
     margin:0px;
 }
 .search-btn{
