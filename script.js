@@ -1,22 +1,26 @@
 //DOM //
 const searchBtn = document.getElementById('search-btn');
 const drList = document.getElementById('doctor');
-const drDetailsContent = document.querySelector(".doctor-details-content");
-const drInfoCloseBtn = document.getElementById("drInfo-close-btn");
+// const drDetailsContent = document.querySelector(".doctor-details-content");
+// const drInfoCloseBtn = document.getElementById("drInfo-close-btn");
 
 //Event Listner -- here to do SOMETHING upon user//
 searchBtn.addEventListener('click', getDrList);
-//drList.addEventListener("click",getDrInfo);
+// drList.addEventListener("click",getDrInfo);
 // drInfoCloseBtn.addEventListener("click", function() {
-//   drDetailsContent.parentElement.classList.remove("showDrInfo");  
+// drDetailsContent.parentElement.classList.remove("showDrInfo");  
 // });
 
+
+let photos = [
+
+]
 
 // get doctor list that matches with the dx or condition
 
 function getDrList(){
     let searchInputTxt = document.getElementById('search-input').value.trim();
-    fetch(`https://randomuser.me/api/?inc=name,location,picture,cell&results=20${searchInputTxt}`)
+    fetch(`https://npiregistry.cms.hhs.gov/api/?version=2.1&taxonomy_description=${searchInputTxt}&limit=40`)
         .then(response => response.json())
         .then((data) => {
         let html = "";
@@ -25,13 +29,10 @@ function getDrList(){
             //will need to change line 27, 29 and 32 with object name from API
             data.results.forEach(doctor => {
                 html += `
-                    <div class = "doctor-item" data-id = "${doctor.name.first}">
-                        <div class = "dr-img">
-                            <img src = "${doctor.picture.large}" alt = "Doctor">
-                        </div>
+                    <div class = "doctor-item" data-id = "${doctor.basic.name}">
                         <div class = "doctor-name">
-                            <h3>Dr. ${doctor.name.first} ${doctor.name.last}</h3>
-                            <a href = "#" class = "dr-btn">Get Additional Info</a>
+                            <h3>${doctor.basic.first_name} ${doctor.basic.last_name} ${doctor.basic.credential}</h3>
+                            <a href = "#" class = "dr-btn">More Info</a>
                         </div>
                     </div>
                 `;
@@ -41,22 +42,23 @@ function getDrList(){
             html = "Sorry, we didn't find any physicians with your requested needs!";
             drList.classList.add('notFound');
         }
-
         drList.innerHTML = html;
     });
 }
 
 
-// // get information of the doctor -- line 56 needs to have the correct object name, line 54 will need to have the correct API directory
-// function getDrInfo(e){
-//     e.preventDefault();
-//     if(e.target.classList.contains('dr-btn')){
-//         let doctorItem = e.target.parentElement.parentElement;
-//         fetch(//`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealItem.dataset.id}`)
-//         .then(response => response.json())
-//         .then(data => drListModal(data.meals))
-//     }
-// }
+// get information of the doctor -- line 56 needs to have the correct object name, line 54 will need to have the correct API directory
+function getDrInfo(e){
+    e.preventDefault();
+    if(e.target.classList.contains('dr-btn')){
+        let doctorItem = e.target.parentElement.parentElement;
+        fetch(`https://npiregistry.cms.hhs.gov/api/?version=2.1&taxonomy_description=${doctorItem}`)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);//drListModal(data.results))
+    })
+}
+}
 
 // // create a modal -- meal parameter will need to be changed to object name
 // function drListModal(meal){
