@@ -26,16 +26,17 @@ function getDrList(){
         let html = "";
         //name of the object data.[here]
         if(data.results){
-            //will need to change line 27, 29 and 32 with object name from API
+           console.log(data.results); //will need to change line 27, 29 and 32 with object name from API
             data.results.forEach(doctor => {
                 html += `
                     <div class = "doctor-item" data-id = "${doctor.basic.name}">
                         <div class = "doctor-name">
-                            <h3>${doctor.basic.first_name} ${doctor.basic.last_name} ${doctor.basic.credential}</h3>
+                            <h3>${doctor['addresses'][0]['city']} ${doctor.basic.last_name} ${doctor.basic.credential}</h3>
                             <a href = "#" class = "dr-btn">More Info</a>
                         </div>
                     </div>
                 `;
+        
             });
             drList.classList.remove('notFound');
         } else{
@@ -49,6 +50,7 @@ function getDrList(){
 
 // get information of the doctor -- line 56 needs to have the correct object name, line 54 will need to have the correct API directory
 function getDrInfo(e){
+    console.log("function is running");
     e.preventDefault();
     if(e.target.classList.contains('dr-btn')){
         let doctorItem = e.target.parentElement.parentElement;
